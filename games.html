@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polar V2 - Games</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(to bottom,#001f3f,#0099cc);
+    color:white;
+    text-align:center;
+}
+
+header{
+    padding:20px;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+}
+
+h1{
+    color:#dff6ff;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    padding:10px 20px;
+    background:#00bfff;
+    border-radius:10px;
+    transition:.2s;
+}
+
+nav a:hover{
+    background:#7ddfff;
+    color:#00334d;
+}
+
+.search{
+    width:90%;
+    max-width:500px;
+    margin:25px auto;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    background:rgba(255,255,255,.15);
+    color:white;
+    outline:none;
+}
+
+.search::placeholder{
+    color:#dff6ff;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.game-card{
+    background:rgba(255,255,255,.12);
+    border-radius:15px;
+    padding:20px;
+    transition:.2s;
+}
+
+.game-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(125,223,255,.5);
+}
+
+.game-card h3{
+    margin-top:0;
+}
+
+.play-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 20px;
+    background:#7ddfff;
+    color:#00334d;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.play-btn:hover{
+    background:white;
+}
+
+footer{
+    padding:20px;
+    color:#dff6ff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>❄ Polar V2 Games ❄</h1>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="games.html">🎮 Games</a>
+        <a href="https://discord.gg/kvTCs2QPev" target="_blank">💬 Discord</a>
+    </nav>
+</header>
+
+<input
+class="search"
+type="text"
+id="search"
+placeholder="Search Games..."
+onkeyup="searchGames()">
+
+<div class="games">
+
+    <div class="game-card">
+        <h3>Geometry Dash</h3>
+        <p>Fast Geometry Dash</p>
+        <a class="play-btn" href="game.html">Play</a>
+    </div>
+
+    <div class="game-card">
+        <h3>Baseball Bros</h3>
+        <p>Just baseball bros</p>
+        <a class="play-btn" href="game.html">Play</a>
+    </div>
+
+    <div class="game-card">
+        <h3>Slope</h3>
+        <p>Roll into Slope :D</p>
+        <a class="play-btn" href="game.html">Play</a>
+    </div>
+
+    <div class="game-card">
+        <h3>Tetris</h3>
+        <p>Block game!</p>
+        <a class="play-btn" href="game.html">Play</a>
+    </div>
+
+    <div class="game-card">
+        <h3>Snake</h3>
+        <p>Grow as long as possible :D</p>
+        <a class="play-btn" href="game.html">Play</a>
+    </div>
+
+    <div class="game-card">
+        <h3>2048</h3>
+        <p>Combine tiles to reach 2048.</p>
+        <a class="play-btn" href="game.html">Play</a>
+    </div>
+
+    <div class="game-card">
+        <h3>Drift Hunters</h3>
+        <p>Rae's favorite game</p>
+        <a class="play-btn" href="drifthunters.html">Play</a>
+    </div>
+
+    <div class="game-card">
+    <h3>Run 3</h3>
+    <p>Run through space and avoid falling!</p>
+    <a class="play-btn" href="run3.html">Play</a>
+</div>
+
+</div>
+
+<footer>
+    Polar V2 © 2026
+</footer>
+
+<script>
+function searchGames() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.querySelectorAll(".game-card");
+
+    cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
